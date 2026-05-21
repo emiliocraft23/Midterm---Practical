@@ -42,8 +42,7 @@ Para correr la aplicación, usa Uvicorn. Ejecuta el siguiente comando en tu term
 
 ### 4. Probar la API (Documentación Interactiva)
 FastAPI genera automáticamente documentación que puedes usar para interactuar con tus endpoints.
-Abre tu navegador y entra a:
-👉 **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**
+Abre tu navegador y entra a: **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**
 
 Desde allí, podrás:
 1. Desplegar el bloque de **`POST /register`**.
