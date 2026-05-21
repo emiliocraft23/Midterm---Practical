@@ -31,15 +31,16 @@ pip install -r requirements.txt
 ### 2. Iniciar el Servidor
 Para correr la aplicación, usa Uvicorn. Ejecuta el siguiente comando en tu terminal (asegúrate de estar en la carpeta `Partial`):
 ```bash
-python -m uvicorn main:app --reload
+python -m uvicorn main:app --reload --port 8080
 ```
+*(Nota: Se utiliza el puerto 8080 para evitar el error común de puerto ocupado `[WinError 10013]`).*
 
 Al iniciarse, verás en la consola un mensaje indicando: *"Usuario de ejemplo 'admin' (clave: 'admin123') creado exitosamente."*
 
 ### 3. Probar la API (Documentación Interactiva)
 FastAPI genera automáticamente documentación que puedes usar para interactuar con tu API.
 Abre tu navegador y entra a:
- **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**
+👉 **[http://127.0.0.1:8080/docs](http://127.0.0.1:8080/docs)**
 
 Desde allí, podrás:
 1. Desplegar el bloque de **`POST /login`**.
