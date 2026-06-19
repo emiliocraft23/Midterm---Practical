@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seguridad_api
+    ports:
+      - "8000:8000"        # host:contenedor
+    env_file:
+      - .env               # carga PEPPER y AES_KEY desde el archivo .env
+    environment:
+      - DB_PATH=/app/data/users.db   # BD dentro del volumen persistente
+    volumes:
+      # Bind mount → el archivo users.db se guarda directamente en tu carpeta Final/
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
